@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs and temp
+*.log
+*.tmp
+.cache/
+
+# Optional: uncomment to ignore large video if you prefer not to store in repo
+# images/*.mp4
