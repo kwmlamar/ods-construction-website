@@ -21,6 +21,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="portfolio.html">Our Work</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -39,6 +40,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="portfolio.html">Our Work</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="tel:+12424705294" class="mobile-call-btn">Call Now</a></li>
             </ul>
@@ -107,6 +109,40 @@
         </div>
     </section>
 
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-container">
+            <h2>Our Work</h2>
+            <p class="portfolio-intro">See what we've built across Eleuthera</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/project-pool-aerial.jpg" alt="Custom pool construction">
+                    <div class="portfolio-overlay">
+                        <h3>Custom Pools</h3>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/project-interior.jpg" alt="Beach house renovation">
+                    <div class="portfolio-overlay">
+                        <h3>Renovations</h3>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/project-construction.jpg" alt="New construction">
+                    <div class="portfolio-overlay">
+                        <h3>New Builds</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-cta-section">
+                <a href="portfolio.html" class="cta-button">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
     <section id="services" class="services">
         <div class="services-container">
             <h2>Our Services</h2>
@@ -159,7 +195,9 @@
                 
                 <div class="contact-form-wrapper">
                     <h3>Send Us A Message</h3>
-                    <form class="contact-form">
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="dd2aff84-958b-4344-8339-5bd6c820cf5e">
+                        <input type="hidden" name="subject" value="New inquiry from ODS Construction website">
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <input type="tel" name="phone" placeholder="Phone Number">

@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
 /* Basic reset */
 * {
     margin: 0;
@@ -291,24 +287,26 @@ body {
     }
 }
 
-.services {
+/* Portfolio page */
+
+.portfolio {
     padding: 80px 20px;
     background-color: white;
 }
 
-.services-container {
+.portfolio-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.services h2 {
+.portfolio h2 {
     font-size: 48px;
     text-align: center;
     margin-bottom: 20px;
     color: #1a1a2e;
 }
 
-.services-intro {
+.portfolio-intro {
     text-align: center;
     font-size: 18px;
     color: #666;
@@ -318,41 +316,272 @@ body {
     margin-right: auto;
 }
 
-.service-grid {
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    aspect-ratio: 1; /* Makes it a perfect square */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: 30px 20px 20px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-overlay h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Homepage portfolio CTA */
+.portfolio-cta-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Portfolio page hero */
+.portfolio-hero {
+    background-color: #1a1a2e;
+    background-image: url('images/pattern-bg.svg');
+    background-size: 450px 450px;
+    background-repeat: repeat;
+    padding: 150px 20px 80px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.portfolio-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(10, 77, 104, 0.92) 100%);
+    z-index: 1;
+}
+
+.portfolio-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-hero-content h1 {
+    font-size: 56px;
+    margin-bottom: 15px;
+}
+
+.portfolio-hero-content p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* Full portfolio grid */
+.portfolio-full {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.portfolio-full-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-full-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-.service-card {
-    background-color: #f9f9f9;
-    padding: 40px 30px;
+.portfolio-full-item {
+    background-color: white;
     border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-card:hover {
+.portfolio-full-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-full-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.portfolio-full-info {
+    padding: 20px;
+}
+
+.portfolio-full-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #1a1a2e;
+}
+
+.portfolio-full-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Placeholder for future photos */
+.portfolio-placeholder {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+    color: #999;
+    font-size: 16px;
+}
+
+/* Portfolio page CTA section */
+.portfolio-cta {
+    padding: 80px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.portfolio-cta-container h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+.portfolio-cta-container p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .portfolio-full-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-hero-content h1 {
+        font-size: 36px;
+    }
+}
+
+.services {
+    padding: 80px 20px;
+    background-color: #1a1a2e;
+    background-image: url('images/pattern-bg.svg');
+    background-size: 450px 450px;
+    background-repeat: repeat;
+    position: relative;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(10, 77, 104, 0.92) 100%);
+    z-index: 1;
+}
+
+.services-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.services-intro {
+    text-align: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 30px; /* 50px vertical, 30px horizontal */
+}
+
+@media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 180, 216, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 180, 216, 0.15);
 }
 
 .service-card h3 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #1a1a2e;
+    color: white;
 }
 
 .service-card p {
     font-size: 16px;
     line-height: 1.6;
-    color: #555;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .contact {
